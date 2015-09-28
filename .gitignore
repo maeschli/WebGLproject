@@ -1,0 +1,4 @@
+## Ignore WebStorm generated files
+## all in .idea folder
+
+.idea/
