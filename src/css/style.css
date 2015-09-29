@@ -154,6 +154,30 @@ nav ul li a:hover, .cur {
     display: none;
 }
 
+#welcome{
+    background-color: #4A9FD5;
+    color: #f2f2f2;
+    border-top: 1px solid #464553;
+    text-align: center;
+    min-height: 400px;
+}
+
+#welcome p{
+    font-family: JosefinSlab;
+    font-size: 240%;
+    text-transform: uppercase;
+    position: relative;
+    top: 120px;
+    text-shadow: #15679c 1px 1px,
+    #15679c 2px 2px,
+    #15679c 3px 3px,
+    #15679c 4px 4px,
+    #15679c 5px 5px,
+    #15679c 6px 6px,
+    #15679c 7px 7px,
+    #15679c 8px 8px;
+}
+
 footer{
     height: 140px;
     background-color: #464553;

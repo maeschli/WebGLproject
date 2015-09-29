@@ -22,6 +22,9 @@
             </ul>
         </nav>
         <div id="content">
+            <div id="welcome">
+                <p>Welcome to WebGL website!</p>
+            </div>
             <div class="divBox" id="one"></div>
             <div class="divBox" id="two"></div>
             <div class="divBox" id="three"></div>
@@ -33,6 +36,7 @@
     <script>
         function showDiv(divId, menuId){
             $('a').removeClass('cur');
+            $('#welcome').hide();
             $('.divBox').each(function() {
                 if ($(this).attr("id") == divId) {
                     $(this).fadeIn(700).show();
