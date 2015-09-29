@@ -35,7 +35,9 @@ nav ul li{
     display: table-cell;
     float: none;
     width: 20%;
-    border: 1px solid #D8E9F0;
+    border-right: 1px solid #D8E9F0;
+    border-left: 1px solid #D8E9F0;
+    border-bottom: 4px solid #4A9FD5;
 }
 
 nav ul li a{
@@ -50,7 +52,7 @@ nav ul li a{
     text-transform: uppercase;
 }
 
-nav ul li a:hover{
+nav ul li a:hover, .cur {
     background-color: #4A9FD5;
     color: #D8E9F0;
     text-shadow: #15679c 1px 1px,
@@ -145,6 +147,11 @@ nav ul li a:hover{
     rgb(241, 241, 241) 78px 78px,
     rgb(241, 241, 241) 79px 79px,
     rgb(242, 242, 242) 80px 80px;
+}
+
+.divBox{
+    min-height: 400px;
+    display: none;
 }
 
 footer{

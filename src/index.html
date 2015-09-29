@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -13,21 +14,38 @@
     <div id="wrapper">
         <nav>
             <ul>
-                <li><a>one</a></li>
-                <li><a>two</a></li>
-                <li><a>three</a></li>
-                <li><a>four</a></li>
-                <li><a>five</a></li>
+                <li style="border-left: none;"><a id="oneM" href="javascript:showDiv('one', 'oneM')">one</a></li>
+                <li><a id="twoM" href="javascript:showDiv('two', 'twoM')">two</a></li>
+                <li><a id="threeM" href="javascript:showDiv('three', 'threeM')">three</a></li>
+                <li><a id="fourM" href="javascript:showDiv('four', 'fourM')">four</a></li>
+                <li style="border-right: none;"><a id="fiveM" href="javascript:showDiv('five', 'fiveM')">five</a></li>
             </ul>
         </nav>
         <div id="content">
-
+            <div class="divBox" id="one"></div>
+            <div class="divBox" id="two"></div>
+            <div class="divBox" id="three"></div>
+            <div class="divBox" id="four"></div>
+            <div class="divBox" id="five"></div>
         </div>
     </div>
 
-    <footer>
+    <script>
+        function showDiv(divId, menuId){
+            $('a').removeClass('cur');
+            $('.divBox').each(function() {
+                if ($(this).attr("id") == divId) {
+                    $(this).fadeIn(700).show();
+                    $('#' + menuId).addClass('cur');
+                }
+                else {
+                    $(this).fadeOut(700).hide();
+                }
+            });
+        }
+    </script>
 
-    </footer>
+    <!--footer></footer-->
 
 </body>
 </html>
