@@ -23,7 +23,7 @@ header{
     width: 80%;
 }
 
-nav ul{
+.menu ul{
     list-style: none;
     display: table;
     width: 100%;
@@ -31,7 +31,7 @@ nav ul{
     padding: 0;
 }
 
-nav ul li{
+.menu ul li{
     display: table-cell;
     float: none;
     width: 20%;
@@ -40,7 +40,7 @@ nav ul li{
     border-bottom: 4px solid #4A9FD5;
 }
 
-nav ul li a{
+.menu ul li a{
     display: block;
     background-color: #464553;
     color: #D8E9F0;
@@ -52,7 +52,7 @@ nav ul li a{
     text-transform: uppercase;
 }
 
-nav ul li a:hover, .cur {
+.menu ul li a:hover, .cur {
     background-color: #4A9FD5;
     color: #D8E9F0;
     text-shadow: #15679c 1px 1px,
@@ -61,6 +61,10 @@ nav ul li a:hover, .cur {
     #15679c 4px 4px,
     #15679c 5px 5px,
     #15679c 6px 6px;
+}
+
+.toggle-nav{
+    display: none;
 }
 
 #content{
@@ -181,4 +185,54 @@ nav ul li a:hover, .cur {
 footer{
     height: 140px;
     background-color: #464553;
+}
+
+@media screen and (max-width : 768px){
+    header {
+        display: none;
+    }
+
+    #wrapper{
+        margin: 0 auto;
+        min-height: 500px;
+        width: 100%;
+    }
+
+    #content{
+        box-shadow: none;
+    }
+
+    .menu ul.active {
+        display:none;
+    }
+
+    .menu ul {
+        width:100%;
+        display: block;
+        background-color: #464553;
+    }
+
+    .menu ul li{
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .toggle-nav {
+        width: 100%;
+        background-color: #464553;
+        display: block;
+        min-height: 40px;
+    }
+
+    .toggle-nav a{
+        display: inline;
+        color: #D8E9F0;
+        padding: 4px 16px;
+        font-size: 140%;
+        font-family: JosefinSlab;
+        float: right;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 }
