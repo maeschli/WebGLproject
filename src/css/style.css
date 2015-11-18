@@ -23,7 +23,7 @@ header{
     width: 80%;
 }
 
-.menu ul{
+nav ul{
     list-style: none;
     display: table;
     width: 100%;
@@ -31,7 +31,7 @@ header{
     padding: 0;
 }
 
-.menu ul li{
+nav ul li{
     display: table-cell;
     float: none;
     width: 20%;
@@ -40,7 +40,7 @@ header{
     border-bottom: 4px solid #4A9FD5;
 }
 
-.menu ul li a{
+nav ul li a{
     display: block;
     background-color: #464553;
     color: #D8E9F0;
@@ -52,7 +52,7 @@ header{
     text-transform: uppercase;
 }
 
-.menu ul li a:hover, .cur {
+nav ul li a:hover, .cur {
     background-color: #4A9FD5;
     color: #D8E9F0;
     text-shadow: #15679c 1px 1px,
@@ -202,17 +202,17 @@ footer{
         box-shadow: none;
     }
 
-    .menu ul.active {
+    nav ul.active {
         display:none;
     }
 
-    .menu ul {
+    nav ul {
         width:100%;
         display: block;
         background-color: #464553;
     }
 
-    .menu ul li{
+    nav ul li{
         display: block;
         width: 100%;
         border: none;
