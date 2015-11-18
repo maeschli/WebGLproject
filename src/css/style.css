@@ -37,7 +37,7 @@ nav ul li{
     width: 20%;
     border-right: 1px solid #D8E9F0;
     border-left: 1px solid #D8E9F0;
-    border-bottom: 4px solid #4A9FD5;
+    border-bottom: 4px solid #0A91AB;
 }
 
 nav ul li a{
@@ -53,7 +53,7 @@ nav ul li a{
 }
 
 nav ul li a:hover, .cur {
-    background-color: #4A9FD5;
+    background-color: #0A91AB;
     color: #D8E9F0;
     text-shadow: #15679c 1px 1px,
     #15679c 2px 2px,
@@ -196,7 +196,7 @@ nav ul li a:hover, .cur {
 h1, h2, h3, h4, h5, h6{
     font-family: JosefinSlab;
     text-transform: uppercase;
-    color: #4A9FD5;
+    color: #0A91AB;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -206,7 +206,7 @@ h2{ font-size: 120%;}
 
 hr{
     margin: 0;
-    border: 1px solid #4A9FD5;
+    border: 1px solid #0A91AB;
 }
 
 p{
