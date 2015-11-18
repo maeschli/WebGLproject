@@ -17,7 +17,7 @@
         <nav>
             <div class="toggle-nav"><a  href="#">&#9776;</a></div>
             <ul class="active">
-                <li style="border-left: none;"><a id="homeM" href="javascript:showDiv('home', 'homeM')">Home</a></li>
+                <li style="border-left: none;"><a id="homeM" href="javascript:showDiv('home', 'homeM')" class="cur">Home</a></li>
                 <li><a id="examM" href="javascript:showDiv('exam', 'examM')">Examples</a></li>
                 <li><a id="fileM" href="javascript:showDiv('file', 'fileM')">File</a></li>
                 <li><a id="viewM" href="javascript:showDiv('view', 'viewM')">View</a></li>
@@ -25,22 +25,25 @@
             </ul>
         </nav>
         <div id="content">
-            <div id="welcome">
-                <p>Welcome to WebGL website!</p>
+            <div class="dv" id="home">
+                <div id="downloadLinks">
+
+                </div>
+                <h2>Welcome to WebGL website!</h2><hr>
+                <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum ...</p>
             </div>
-            <div class="divBox" id="home"></div>
-            <div class="divBox" id="exam"></div>
-            <div class="divBox" id="file"></div>
-            <div class="divBox" id="view"></div>
-            <div class="divBox" id="about"></div>
+            <div class="dv divBox" id="exam"></div>
+            <div class="dv divBox" id="file"></div>
+            <div class="dv divBox" id="view"></div>
+            <div class="dv divBox" id="about"></div>
         </div>
     </div>
 
     <script>
         function showDiv(divId, menuId){
             $('a').removeClass('cur');
-            $('#welcome').hide();
-            $('.divBox').each(function() {
+            $('#home').hide();
+            $('.dv').each(function() {
                 if ($(this).attr("id") == divId) {
                     $(this).fadeIn(700).show();
                     $('#' + menuId).addClass('cur');

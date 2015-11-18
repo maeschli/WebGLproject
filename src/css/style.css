@@ -70,6 +70,7 @@ nav ul li a:hover, .cur {
 #content{
     margin: 0 auto;
     min-height: 400px;
+    border-left: 1px solid rgb(218, 218, 218);
     background: #f2f2f2;
     box-shadow: rgb(218, 218, 218) 1px 1px,
     rgb(218, 218, 218) 2px 2px,
@@ -154,8 +155,18 @@ nav ul li a:hover, .cur {
 }
 
 .divBox{
-    min-height: 400px;
+    /*min-height: 400px;*/
     display: none;
+}
+
+.dv{
+    padding: 10px 20px;
+}
+
+#downloadLinks{
+    margin: -10px -20px 20px -21px;
+    background-color: #FFC045/*#EB586F*/;
+    height: 140px;
 }
 
 #welcome{
@@ -180,6 +191,28 @@ nav ul li a:hover, .cur {
     #15679c 6px 6px,
     #15679c 7px 7px,
     #15679c 8px 8px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: JosefinSlab;
+    text-transform: uppercase;
+    color: #4A9FD5;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h1{ font-size: 140%;}
+h2{ font-size: 120%;}
+
+hr{
+    margin: 0;
+    border: 1px solid #4A9FD5;
+}
+
+p{
+    font-family: serif;
+    color: #6a6a6a;
+    font-size: 100%;
 }
 
 footer{
