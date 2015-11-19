@@ -21,6 +21,7 @@ header{
     margin: 40px auto;
     min-height: 500px;
     width: 80%;
+    margin-bottom: 80px;
 }
 
 nav ul{
@@ -165,7 +166,7 @@ nav ul li a:hover, .cur {
 
 #downloadLinks{
     margin: -10px -20px 20px -21px;
-    padding: 30px 0;
+    padding: 40px 0;
     background-color: #FFC045/*#EB586F*/;
 }
 
@@ -215,10 +216,47 @@ p{
     font-size: 100%;
 }
 
+a{
+    text-decoration: none;
+}
+
+.blue{
+    color: #0A91AB;
+}
+
+.yellow{
+    color: #FFC045;
+}
+
 .center{
     display: block;
     text-align: center;
     margin: 0 auto;
+}
+
+.image-link{
+    margin: 4px;
+}
+
+.item-overlay{
+    display: none;
+    position: relative;
+    width: 333px;
+    height: 216px;
+    background: #FFC045;
+}
+
+.item-overlay.act{
+    display: block;
+}
+
+.item-overlay a{
+    color: #f2f2f2;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 90px;
+    left: 90px;
 }
 
 .btn{
@@ -232,12 +270,24 @@ p{
 }
 
 .btn-blue:hover{
+    color: #0A91AB;
+    background: none;
+    border: 2px solid #0A91AB;
+}
+
+.btn-blue{
     color: #f2f2f2;
     background: #0A91AB;
     border: 2px solid #0A91AB;
 }
 
-.btn-blue{
+.btn-blue-inversion:hover{
+    color: #f2f2f2;
+    background: #0A91AB;
+    border: 2px solid #0A91AB;
+}
+
+.btn-blue-inversion{
     color: #0A91AB;
     border: 2px solid #0A91AB;
 }
@@ -250,13 +300,12 @@ p{
 
 .btn-white-full:hover{
     border: 2px dashed #f2f2f2;
-    background: #FFC045;
+    background: none;
     color: #f2f2f2;
 }
 
-
 footer{
-    height: 140px;
+    height: 180px;
     background-color: #464553;
 }
 
