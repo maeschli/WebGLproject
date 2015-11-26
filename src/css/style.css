@@ -229,6 +229,14 @@ a{
     color: #FFC045;
 }
 
+.bg-blue{
+    background-color: #0A91AB;
+}
+
+.bg-yellow{
+    background-color: #FFC045;
+}
+
 /************************* End Colours *************************/
 /************************* Image hover effects *************************/
 
@@ -255,13 +263,11 @@ a{
     overflow:hidden;
     float:left;
     margin-right:20px;
-    background-color: #0A91AB;
 }
-.image-link p,.image-link h2 {
-    color:#fff;
-    padding:10px;
-    left:-20px;
-    top:40px;
+.image-link p{
+    color: #f2f2f2;
+    font-size: 120%;
+    top: 20px;
     position:relative
 }
 
@@ -277,7 +283,7 @@ a{
     transition:bottom .3s ease-in-out
 }
 .effect img.top:hover {
-    bottom:-100px;
+    bottom:-66px;
     padding-top:100px
 }
 h2.zero,p.zero {
