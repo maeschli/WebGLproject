@@ -1,3 +1,5 @@
+/************************* Basis *************************/
+
 @font-face {
     font-family: JosefinSlab;
     src: url(../fonts/JosefinSlab-Bold.ttf);
@@ -23,6 +25,14 @@ header{
     width: 80%;
     margin-bottom: 80px;
 }
+
+footer{
+    height: 180px;
+    background-color: #464553;
+}
+
+/************************* End Basis *************************/
+/************************* Menu *************************/
 
 nav ul{
     list-style: none;
@@ -67,6 +77,9 @@ nav ul li a:hover, .cur {
 .toggle-nav{
     display: none;
 }
+
+/************************* End Menu *************************/
+/************************* Content *************************/
 
 #content{
     margin: 0 auto;
@@ -167,32 +180,17 @@ nav ul li a:hover, .cur {
 #downloadLinks{
     margin: -10px -20px 20px -21px;
     padding: 40px 0;
-    background-color: #FFC045/*#EB586F*/;
+    background-color: #FFC045;
 }
 
-#welcome{
-    background-color: #4A9FD5;
-    color: #f2f2f2;
-    border-top: 1px solid #464553;
+.center{
+    display: block;
     text-align: center;
-    min-height: 400px;
+    margin: 0 auto;
 }
 
-#welcome p{
-    font-family: JosefinSlab;
-    font-size: 240%;
-    text-transform: uppercase;
-    position: relative;
-    top: 120px;
-    text-shadow: #15679c 1px 1px,
-    #15679c 2px 2px,
-    #15679c 3px 3px,
-    #15679c 4px 4px,
-    #15679c 5px 5px,
-    #15679c 6px 6px,
-    #15679c 7px 7px,
-    #15679c 8px 8px;
-}
+/************************* End Content *************************/
+/************************* Text *************************/
 
 h1, h2, h3, h4, h5, h6{
     font-family: JosefinSlab;
@@ -220,6 +218,9 @@ a{
     text-decoration: none;
 }
 
+/************************* End Text *************************/
+/************************* Colours *************************/
+
 .blue{
     color: #0A91AB;
 }
@@ -228,11 +229,8 @@ a{
     color: #FFC045;
 }
 
-.center{
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-}
+/************************* End Colours *************************/
+/************************* Image hover effects *************************/
 
 .im {
     display: inline-block;
@@ -287,6 +285,9 @@ h2.zero,p.zero {
     padding:0
 }
 
+/************************* End Image hover effects *************************/
+/************************* Buttons *************************/
+
 .btn{
     display: inline-block;
     margin: 10px;
@@ -332,10 +333,8 @@ h2.zero,p.zero {
     color: #f2f2f2;
 }
 
-footer{
-    height: 180px;
-    background-color: #464553;
-}
+/************************* End Buttons *************************/
+
 
 @media screen and (max-width : 768px){
     header {
