@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/glMatrix-0.9.5.min.js"></script>
     <script type="text/javascript" src="js/webgl-utils.js"></script>
+    <script type="text/javascript" src="js/fileReader.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -108,13 +109,14 @@
             <div class="dv divBox" id="file">
                 <div class="file-upload">
                     <label class="btn btn-blue">
-                        <input type="file" required/>
+                        <input id="uploadImage" type="file" onchange="loadImageFile();" required/>
                         <span>
                             Upload your own file
                         <i class="fa fa-upload"></i>
                         </span>
                     </label>
                 </div>
+                <img id="uploadPreview" src="" width="100%">
             </div>
             
             <div class="dv divBox" id="view"></div>
