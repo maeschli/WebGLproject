@@ -1,3 +1,14 @@
+var parseStl = function(stl) {
+  var data = new Uint8Array(stl, 0, 5),
+      str = data.reduce(function (str, item) {
+        return str + String.fromCharCode(item);
+      }, "");
+  if(str === "solid") {
+    return parseStlASCII(stl);
+  }
+  return parseStlBinary(stl);
+}
+
 var parseStlBinary = function(stl) {
   var data = new DataView(stl, 80), // 80 bytes unused header
       isLittleEndian = true, // All binary STLs are assumed to be little endian
