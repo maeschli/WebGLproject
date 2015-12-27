@@ -197,10 +197,7 @@ canvas{
 /************************* Text *************************/
 
 .file-upload{
-    min-height: 140px;
-    padding-top: 60px;
-    border: 2px dashed #0A91AB;
-    text-align: center;
+    padding: 10px;
 }
 
 .file-upload input[type="file"] {
@@ -242,6 +239,10 @@ a{
 
 .yellow{
     color: #FFC045;
+}
+
+.bg-white{
+    background-color: #f2f2f2;
 }
 
 .bg-blue{
