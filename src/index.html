@@ -7,15 +7,45 @@
 
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
-    <script type="text/javascript" src="js/glMatrix-0.9.5.min.js"></script>
-    <script type="text/javascript" src="js/webgl-utils.js"></script>
     <script type="text/javascript" src="js/fileReader.js"></script>
+    <script type="text/javascript" src="js/Parser_stl.js"></script>
+    <script type="text/javascript" src="js/mat.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+     varying float directionalLightWeighting;
+     varying vec3 BC;
+     varying vec4 vColor;
+    void main(){
+     if(abs(min(min(BC.x, BC.y), BC.z))<0.02){gl_FragColor=vec4(0.,0.,0.,1.);}else{gl_FragColor=vec4(vColor.xyz*directionalLightWeighting,1.);}
+    }
+    </script>
+    <script id="shader-vs" type="x-shader/x-vertex">
+     varying float directionalLightWeighting;
+     varying vec3 BC;
+     varying vec4 vColor;
+     attribute vec3 aVertexPosition, barycentric, aVertexNormal;
+     attribute vec4 aVertexColor;
+     uniform vec3 uLightingDirection;
+     uniform mat4 uMVMatrix, uPMatrix;
+     uniform mat3 uNMatrix;
+    void main(){
+     vec3 transformedNormal = uNMatrix * aVertexNormal;
+     directionalLightWeighting = 0.2+0.8*max(dot(transformedNormal, uLightingDirection), 0.);
+     BC=barycentric;
+     vColor=aVertexColor;
+     gl_Position = uPMatrix*uMVMatrix*vec4(aVertexPosition, 1.0);
+    }
+    </script>
+
+    <script type="text/javascript" src="js/webgl.js"></script>
+
 </head>
 
-<body>
+<body onkeypress="Key(event);">
     <header>
         <!--img src="img/logo.png" id="logo"-->
     </header>
@@ -116,9 +146,9 @@
                         </span>
                     </label>
                 </div>
-                <iframe id="uploadPreview"></iframe>
+                <canvas id="Plot3D" style="border:thin inset;top:8px;left:8px; width: 1000px; height: 1000px;"></canvas>
             </div>
-            
+
             <div class="dv divBox" id="view"></div>
             <div class="dv divBox" id="about"></div>
         </div>
