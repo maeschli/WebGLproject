@@ -146,7 +146,13 @@
                         </span>
                     </label>
                 </div>
-                <canvas id="Plot3D" style="border:thin inset;top:8px;left:8px; width: 1000px; height: 1000px;"></canvas>
+                <div class="center">
+                    <button class="btn btn-blue" onclick="Change('rotateX',deg)"><span>&uarr;</span></button>
+                    <button class="btn btn-blue" onclick="Change('rotateY',deg)"><span>&rarr;</span></button>
+                    <button class="btn btn-blue" onclick="Change('scale',[1.1,1.1,1.1])"><span>&oplus;</span></button>
+                    <button class="btn btn-blue" onclick="Change('scale',[1/1.1,1/1.1,1/1.1])"><span>&ominus;</span></button>
+                </div>
+                <canvas id="Plot3D"></canvas>
             </div>
 
             <div class="dv divBox" id="view"></div>
