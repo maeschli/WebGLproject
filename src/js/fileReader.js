@@ -8,15 +8,31 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
 } else {
     alert('The File APIs are not fully supported by your browser.');
 }
-
+var fileName;
 oFReader = new FileReader();
 oFReader.onload = function (oFREvent) {
-    console.log(oFREvent.target.result);
+    var fileType = fileName.slice(-3),
+        result;
+
+    if(fileType === "stl") {
+      result = parseStl(oFREvent.target.result);
+    }
+    else if(fileType === "obj") {
+      // Миша, тут вызываешь свою функцию, результат надо сделать чтобы
+      // возвращался в виде обьекта следующего формата:
+      // {vertices : Float32Array, normals: Float32Array}
+
+      
+    }
+
+    webGLStart(result.vertices, result.normals);
 };
 
 function loadImageFile() {
-    if (document.getElementById("uploadImage").files.length === 0) { return; }
-    var oFile = document.getElementById("uploadImage").files[0];
+    var files = document.getElementById("uploadImage").files;
+    if (files.length === 0) { return; }
+    var oFile = files[0];
+    fileName = oFile.name;
 
     oFReader.readAsArrayBuffer(oFile);
 }
