@@ -4,9 +4,20 @@ var parseStl = function(stl) {
         return str + String.fromCharCode(item);
       }, "");
   if(str === "solid") {
-    return parseStlASCII(stl);
+    return parseStlASCII(arrayBufferToString(stl));
   }
   return parseStlBinary(stl);
+}
+
+function arrayBufferToString(ab) {
+  var str = "";
+  var offset = 0;
+  while(offset + 512 < ab.byteLength) {
+    str += String.fromCharCode.apply(null, new Uint8Array(ab, offset, 512));
+    offset += 512;
+  }
+  str += String.fromCharCode.apply(null, new Uint8Array(ab, offset, ab.byteLength-offset));
+  return str;
 }
 
 var parseStlBinary = function(stl) {
@@ -21,7 +32,7 @@ var parseStlBinary = function(stl) {
       offset = 4,
       normal = [];
 
-  for (i = 0; i < triangles; i+=3) {
+  for (i = 0; i < triangles; i++) {
 
     // Get the normal for this triangle
     // I didn't save it cause I'll compute normals for vertices later
@@ -33,11 +44,11 @@ var parseStlBinary = function(stl) {
 
     // Get 3 vertices for triangle
     for (j = 0; j < 3; j++) {
-      k = (i+j)*3;
+      k = i*9 + j*3;
 
-      normals[k] = data.getFloat32(offset, isLittleEndian);
-      normals[k+1] = data.getFloat32(offset+4, isLittleEndian);
-      normals[k+2] = data.getFloat32(offset+8, isLittleEndian);
+      normals[k] = normal[0];
+      normals[k+1] = normal[1];
+      normals[k+2] = normal[2];
 
       vertices[k] = data.getFloat32(offset, isLittleEndian);
       vertices[k+1] = data.getFloat32(offset+4, isLittleEndian);
@@ -72,7 +83,7 @@ var parseStlASCII = function(stl) {
     if (done) {
       break;
     }
-    line = lines[i].trim();
+    line = lines[i].trim().replace(/ +/, ' ');
     parts = line.split(' ');
     switch (state) {
       case '':
@@ -138,13 +149,9 @@ var parseStlASCII = function(stl) {
           done = true;
         } else if (parts[0] === 'facet' && parts[1] === 'normal') {
           // Add normal for vertice
-          normals.push(normal[0]);
-          normals.push(normal[1]);
-          normals.push(normal[2]);
-          // Add vertice
-          vertices.push(parseFloat(parts[1]));
-          vertices.push(parseFloat(parts[2]));
-          vertices.push(parseFloat(parts[3]));
+          normal[0] = parseFloat(parts[2]);
+          normal[1] = parseFloat(parts[3]);
+          normal[2] = parseFloat(parts[4]);
           state = 'facet normal';
         } else {
           console.error(line);
