@@ -13,7 +13,7 @@
     var Nvertex;
     var vertices=[];
 
-          var colors=[[1.0, 0.0, 0.0, 1.0]];
+          var colors=[[0.6, 0.6, 0.6, 1.0]];
 
 function initShaders() {
         var fragmentShader = getShader(gl, "shader-fs");
