@@ -18,11 +18,7 @@ oFReader.onload = function (oFREvent) {
       result = parseStl(oFREvent.target.result);
     }
     else if(fileType === "obj") {
-      // Миша, тут вызываешь свою функцию, результат надо сделать чтобы
-      // возвращался в виде обьекта следующего формата:
-      // {vertices : Float32Array, normals: Float32Array}
-
-      
+      result = parseObj(oFREvent.target.result);
     }
 
     webGLStart(result.vertices, result.normals);
